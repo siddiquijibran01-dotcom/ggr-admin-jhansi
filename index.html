@@ -1,27 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>GGR Admin Panel</title>
-  <link rel="stylesheet" href="./style.css"/>
+  <meta charset="UTF-8">
+  <title>GGR Admin</title>
+  <script type="module">
+    // Firebase import (CDN se)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    //const firebaseConfig
+  apiKey: "AIzaSyA9vmRlUsHetjuD7L1l-DxtQwn7WPW6T7I",
+  authDomain: "golden-green-recipe.firebaseapp.com",
+  projectId: "golden-green-recipe",
+  storageBucket: "golden-green-recipe.firebasestorage.app",
+  messagingSenderId: "952103785525",
+  appId: "1:952103785525:web:06a9eeb8d33364446e4d7c"
+   
+                         
+
+    // Firebase initialize
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Test
+    console.log("Firebase Connected ✅");
+    document.getElementById("status").innerText = "Firebase Connected ✅";
+  </script>
 </head>
 <body>
-  <header>
-    <img src="./logo.png" onerror="this.style.display='none'"/>
-    <h1>Golden Green Recipe — Admin</h1>
-  </header>
-  <div id="app"></div>
-
-  <!-- Firebase (compat for simplicity) -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
-
-  <!-- Your Firebase config (rename sample to firebase-config.js and fill keys) -->
-  <script src="./firebase-config.js"></script>
-
-  <!-- App code -->
-  <script src="./app.js"></script>
+  <h1>Golden Green Recipe Admin</h1>
+  <p id="status">Connecting to Firebase...</p>
 </body>
 </html>
