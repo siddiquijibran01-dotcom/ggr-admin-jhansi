@@ -9,13 +9,13 @@
   <h2>Golden Green Recipe - Firebase Connected ✅</h2>
   <p id="status">Connecting to Firebase...</p>
 
-  <!-- Firebase CDN SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"></script>
+  <!-- Firebase CDN (Modular v10+) -->
+  <script type="module">
+    // Import Firebase functions from CDN
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-  <script>
-    // Aapka Firebase config
+    // 🔑 Aapka Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyA9vmRlUsHetjuD7L1l-DxtQwn7WPW6T7I",
       authDomain: "golden-green-recipe.firebaseapp.com",
@@ -25,9 +25,11 @@
       appId: "1:952103785525:web:06a9eeb8d33364446e4d7c"
     };
 
-    // Firebase initialize
-    const app = firebase.initializeApp(firebaseConfig);
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
+    // Status update
     document.getElementById("status").innerText = "Firebase Connected 🎉";
   </script>
 </body>
