@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GGR Admin</title>
-  <script type="module">
-    // Firebase import (CDN se)
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-    //const firebaseConfig
-  apiKey: "AIzaSyA9vmRlUsHetjuD7L1l-DxtQwn7WPW6T7I",
-  authDomain: "golden-green-recipe.firebaseapp.com",
-  projectId: "golden-green-recipe",
-  storageBucket: "golden-green-recipe.firebasestorage.app",
-  messagingSenderId: "952103785525",
-  appId: "1:952103785525:web:06a9eeb8d33364446e4d7c"
-   
-                         
-
-    // Firebase initialize
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    // Test
-    console.log("Firebase Connected ✅");
-    document.getElementById("status").innerText = "Firebase Connected ✅";
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Green Recipe - Admin</title>
 </head>
 <body>
-  <h1>Golden Green Recipe Admin</h1>
+  <h2>Golden Green Recipe - Firebase Connected ✅</h2>
   <p id="status">Connecting to Firebase...</p>
+
+  <!-- Firebase CDN SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"></script>
+
+  <script>
+    // Aapka Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyA9vmRlUsHetjuD7L1l-DxtQwn7WPW6T7I",
+      authDomain: "golden-green-recipe.firebaseapp.com",
+      projectId: "golden-green-recipe",
+      storageBucket: "golden-green-recipe.firebasestorage.app",
+      messagingSenderId: "952103785525",
+      appId: "1:952103785525:web:06a9eeb8d33364446e4d7c"
+    };
+
+    // Firebase initialize
+    const app = firebase.initializeApp(firebaseConfig);
+
+    document.getElementById("status").innerText = "Firebase Connected 🎉";
+  </script>
 </body>
 </html>
