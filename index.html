@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GGR Admin Panel</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <header>
+    <img src="./logo.png" onerror="this.style.display='none'"/>
+    <h1>Golden Green Recipe — Admin</h1>
+  </header>
+  <div id="app"></div>
+
+  <!-- Firebase (compat for simplicity) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
+
+  <!-- Your Firebase config (rename sample to firebase-config.js and fill keys) -->
+  <script src="./firebase-config.js"></script>
+
+  <!-- App code -->
+  <script src="./app.js"></script>
+</body>
+</html>
