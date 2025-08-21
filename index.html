@@ -31,6 +31,33 @@
 
     // Status update
     document.getElementById("status").innerText = "Firebase Connected 🎉";
+    import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+// Example: Data add karna
+async function addRecipe() {
+  try {
+    await addDoc(collection(db, "recipes"), {
+      name: "Chicken Biryani",
+      price: 250,
+      type: "Non-Veg"
+    });
+    console.log("Recipe Added ✅");
+  } catch (e) {
+    console.error("Error adding recipe: ", e);
+  }
+}
+
+// Example: Data read karna
+async function getRecipes() {
+  const querySnapshot = await getDocs(collection(db, "recipes"));
+  querySnapshot.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data());
+  });
+}
+
+// Page load hote hi test ke liye call
+addRecipe();
+getRecipes();
   </script>
 </body>
 </html>
